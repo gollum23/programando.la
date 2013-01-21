@@ -1,19 +1,17 @@
 <?php 
 
-function toStatic($buffer){
-  $a = array( 
-    'á','é','í','ó','ú','ñ',
-    'Á','É','Í','Ó','Ú','Ñ'
+// Este archivo es el que se usa para generar la pagina principal
+// que se le muestra a todos los usuarios.
+// De esta forma mostrar la pagina es algo mas ligero y rapido para el servidor.
+
+if( strpos($_SERVER['SERVER_NAME'], 'programando.la/') !== FALSE ){
+  throw new Exception(
+    'Este script es para ser ejecutado unicamente en'
+    . ' un contexto local, no directamente en produccion.'
   );
-  $b = array( 
-    '&aacute;','&eacute;','&iacute;','&oacute;','&uacute;','&ntilde;',
-    '&Aacute;','&Eacute;','&Iacute;','&Oacute;','&Uacute;','&Ntilde;'
-  );
-  $buffer = str_replace($a, $b, $buffer);
-  file_put_contents('index.html', $buffer);
-  return $buffer;  
 }
 
+require("functions.php");
 ob_start("toStatic"); 
 
 ?><!DOCTYPE html>
@@ -39,26 +37,6 @@ ob_start("toStatic");
 
   <body class="nojs">
     <script>document.body && (document.body.className = "");</script>
-
-    <?php 
-    function printMenu($wiki, $pagOficial=''){
-    ?>
-              <p>
-                <a class="btn btn_video_es" href="#">Vídeos en Español</a>
-                <!-- <a class="btn btn_video_en" href="#">Videos en Ingles</a> -->
-              </p>
-              <p class="text_links">
-                <a class="btn" href="http://es.wikipedia.org/wiki/<?php echo $wiki ?>" target="_blank">Wikipedia</a>
-                <a class="btn btn_doc" href="#">Documentos</a>                
-                <?php if(!empty($pagOficial)){
-                  echo '<a class="btn btn_docs" target="_blank" href="'.$pagOficial.'">Pagina oficial</a>';
-                }?>
-              </p>
-    <?php } 
-    function printList($file){
-      $source = readfile('source/'.$file.".html");
-    }
-    ?>
     <div class="container">
       <div class="hero-unit">
         <h1 class="hero-title">Programando.la!</h1>
@@ -159,57 +137,19 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.">MIT License<a><!--  - <a href="#">Fork it on github</a> --></p>
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.">MIT License<a><a href="#">Fork it on github</a></p>
       </footer>
 
-    </div><!--/.fluid-container-->
+    </div>
 
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>    
 	<script src="js/jquery.qtip-1.0.0-rc3.min.js"></script>  
   <script src="js/app.js"></script>  
-  <!-- 
 
-  // :: Regalando.la
-
-  // ::::Con este javascript (jQuery) saco listas de YouTube:
-  
-    var n = "\r\n";
-  "<!-"+"- Extraido desde " + String(document.location) + " -"+"->" + n +
-  $(".playlist-landing .yt-uix-tile-link").filter(function(){ return this.innerText.indexOf("Python") !== -1 }).map(function(i, e){
-  return '<li>' + n + '\t<a class="video_es" href="'+e.href.replace(/&.*/,"")+'" target="_blank">' + e.innerText + "</a>" + n + "</li>"
-  }).get().join(n);
-
-
-  // ::::Otro ejemplo para lista PHP de Youtube:
-
-  var n = "\r\n";
-  "<!-"+"- Extraido desde " + String(document.location) + " -"+"->" + n +
-  $(".playlist-landing .yt-uix-tile-link").filter(function(){ return this.innerText.indexOf("PHP") !== -1 }).map(function(i, e){
-  return '<li>' + n + '\t<a class="video_es" href="'+e.href.replace(/&.*/,"")+'" target="_blank">' + e.innerText.replace("Tutorial PHP - ","").replace(/ en PHP ?| mediante PHP/,"") + "</a>" + n + "</li>"
-  }).get().join(n);
-
-  // ::::Otro ejemplo para lista Ruby de Youtube:
-
-  var n = "\r\n";
-"<!-"+"- Extraido desde " + String(document.location) + " -"+"->" + n +
-$(".playlist-landing .yt-uix-tile-link").map(function(i, e){
-return '<li>' + n + '\t<a class="video_es" href="'+e.href.replace(/&.*/,"")+'" target="_blank">' + e.innerText.replace('Tutorial Ruby ','') + "</a>" + n + "</li>"
-}).get().join(n);
- 
-  // ::::Con este javascript (jQuery) saco resultados de Google
-
-  var $$$ = jQuery;
-  var n = "\r\n";
-    "<!-"+"- Extraido desde " + String(document.location) + " -"+"->" + n + $$$(".g").map(function(){ return '<li>'+ n +'\t<a class="doc" href="' + $$$(this).find("a:first").prop("href") + '">' + $$$(this).find("a:first").text() + "</a>" + n + '</li>'}).get().join(n)
-  -->
   </body>
 </html>
 <?php
 
 ob_end_flush();
 
-?>
