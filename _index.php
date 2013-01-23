@@ -4,7 +4,7 @@
 // que se le muestra a todos los usuarios.
 // De esta forma mostrar la pagina es algo mas ligero y rapido para el servidor.
 
-if( strpos($_SERVER['SERVER_NAME'], 'programando.la/') !== FALSE ){
+if( strpos($_SERVER['SERVER_NAME'], 'programando.la') !== FALSE ){
   throw new Exception(
     'Este script es para ser ejecutado unicamente en'
     . ' un contexto local, no directamente en produccion.'

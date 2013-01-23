@@ -7,7 +7,6 @@
 		document.location = document.location.href.replace("www.", "");
 	}
 
-
 	$('a[title]').addClass("expand").qtip({style: {name: 'dark', tip: true}, position: { adjust: { screen: true } } });
 
 	$(".container").on("click", ".btn_video_es, .btn_video_en, .btn_doc", function (event) {
@@ -23,7 +22,6 @@
 
 	$(window).on('click scroll', holdLoop);
 
-	
 	// Nubes de dialogo del comic
 
 	var waitForHold = false;
