@@ -44,7 +44,7 @@
 			}
 			if (!loading) {
 				do {
-					random = (Math.random() * 11) | 0;
+					random = (Math.random() * 10) | 0;
 				} while (random === prev);
 				prev = random;
 			}
