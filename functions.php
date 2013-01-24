@@ -26,7 +26,7 @@ function printMenu($wiki, $pagOficial=''){
     <!-- <a class="btn btn_video_en" href="#">Videos en Ingles</a> -->
   </p>
   <p class=text_links>
-    <a class="btn" href="http://es.wikipedia.org/wiki/'.$wiki .'" target="_blank">Wikipedia</a>
+    <a class="btn" href="http://es.wikipedia.org/wiki/' . $wiki .'" target="_blank">Wikipedia</a>
     <a class="btn btn_doc" href="#">Documentos</a>' . $pagOficial .'</p>';
 }
 

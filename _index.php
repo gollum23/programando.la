@@ -100,7 +100,6 @@ ob_start("toStatic");
         </div><!--/span-->
       </div><!--/row-->
 
-
       <div class="row">
         <div class="span4">
           <h2 title="Dificultad: Moderada">Ruby</h2>
@@ -112,7 +111,7 @@ ob_start("toStatic");
         </div><!--/span-->
         <div class="span4">
           <h2 title="Dificultad: Facil/Moderada">Ruby On Rails</h2>
-          <p>El framework mas completo para crear sitios web en Ruby. Asegurate de entender algunos tutoriales de Ruby primero.</p>
+          <p>También conocido como RoR o Rails es un framework de aplicaciones web de código abierto escrito en el lenguaje de programación Ruby, siguiendo el paradigma de la arquitectura <a title="Modelo Vista Controlador (MVC) es un patrón o modelo de abstracción de desarrollo de software que separa los datos de una aplicación, la interfaz de usuario, y la lógica de negocio en tres componentes distintos. El patrón de llamada y retorno MVC (según CMU), se ve frecuentemente en aplicaciones web, donde la vista es la página HTML y el código que provee de datos dinámicos a la página.">Modelo Vista Controlador (MVC)</a>.</p>
           <?php printMenu("Ruby_on_Rails", 'http://rubyonrails.org/') ?>
           <ul>
             <?php printList('rails') ?>
@@ -120,7 +119,7 @@ ob_start("toStatic");
         </div><!--/span-->
         <div class="span4">
           <h2 title="Dificultad: Dificil/Moderada">C++</h2>
-          <p>Es un lenguaje de bajo nivel orientado objetos que se caracteriza por ser usado en aplicaciones de escritorio y videojuegos. Es un lenguaje que EA, Valve y otras importantes empresas de videojuegos usan. Es el lenguaje con el que se desarrollo Google Chrome.</p>
+          <p>Es un <a title="Un lenguaje de programación de bajo nivel de abstracción es aquel en el que sus instrucciones ejercen un control directo sobre el hardware y están condicionados por la estructura física de la computadora que lo soporta.">lenguaje de bajo nivel</a> orientado objetos que se caracteriza por ser usado en aplicaciones de escritorio y videojuegos. Es un lenguaje que EA, Valve y otras importantes empresas de videojuegos usan. Es el lenguaje con el que se desarrollo Google Chrome.</p>
           <?php printMenu("C%2B%2B", "http://isocpp.org/") ?>
           <ul>
             <?php printList('c++') ?>
@@ -128,16 +127,38 @@ ob_start("toStatic");
         </div><!--/span-->
       </div><!--/row-->
 
+      <div class="row">
+        <div class="span4">
+          <h2 title="Dificultad: Facil">Git y Github</h2>
+          <p>Git es un <a title="Se llama control de versiones a la gestión de los diversos cambios que se realizan sobre los archivos y carpetas del proyecto">software de control de versiones</a> diseñado por Linus Torvalds, pensando en la eficiencia y la confiabilidad del mantenimiento de versiones de aplicaciones cuando estas tienen un gran número de archivos de código fuente.</p>
+          <?php printMenu("Git", "http://git-scm.com/") ?>
+          <ul>
+            <?php printList('git') ?>
+          </ul>
+        </div><!--/span-->
+        <div class="span4">
+          <h2 title="Dificultad: Media">Node.js</h2>
+          <p>Node.js es un entorno de programación en la capa del servidor basado en el lenguaje de programación Javascript, con I/O de datos en una <a title="a programación dirigida por eventos es un paradigma de programación en el que tanto la estructura como la ejecución de los programas van determinados por los sucesos que ocurran en el sistema, definidos por el usuario o que ellos mismos provoquen.">arquitectura orientada a eventos</a>, y basado en el motor Javascript V8.</p>
+          <?php printMenu("Node.js", "http://nodejs.org/") ?>
+          <ul>
+            <?php printList('node') ?>
+          </ul>
+        </div><!--/span-->
+      </div><!--/row-->
+
       <hr>
 
       <footer>
-        <p>Creado por <a class="author" href="http://twitter.com/ivanca">Ivan Castellanos</a><br>El logo animado en este sitio web es una paradia de mejorando.la<br><span title="Copyright (c) 2012 Ivan Castellanos.
+        <p>Creado por <a class="author" href="http://twitter.com/ivanca">Ivan Castellanos</a><br>El logo animado en este sitio web es una paradia de mejorando.la<br>
+          <span title="Copyright (c) 2012 Ivan Castellanos.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.">MIT License<a><a href="https://github.com/AltIvan/programando.la">Fork it on github</a></p>
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.">MIT License</span>
+
+        <a href="https://github.com/AltIvan/programando.la">Fork it on github</a></p>
       </footer>
 
     </div>
