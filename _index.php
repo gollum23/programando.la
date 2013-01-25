@@ -50,7 +50,7 @@ ob_start("toStatic");
           <p>Aprende a crear paginas web de la forma moderna con todos los beneficios que esta trae.</p>
           <?php printMenu("HTML5") ?>
           <ul>
-            <?php printList('html5') ?>
+            <?php getLinks('html5') ?>
           </ul>
         </div><!--/span-->
         <div class="span4">
@@ -58,7 +58,7 @@ ob_start("toStatic");
           <p>Es un lenguaje <a title="Programación basada en prototipos es un estilo de programación orientada a objetos en el cual, las 'clases' no están presentes, pero la reutilizacion de codigo se hace a travez de clonacion de objetos persistentes. Los cuales sirven de base para el nuevo objeto.">basado en prototipos</a> y es el <a title="Javascript se utiliza principalmente en su forma del lado del cliente (client-side), implementado como parte de un navegador web permitiendo mejoras en la interfaz de usuario y páginas web dinámicas, en bases de datos locales al navegador. También existe una forma de JavaScript del lado del servidor, la mas popular es Node.JS">unico</a> usado para proveer interactividad en la web. También se enseña un poco sobre <a title="jQuery es una biblioteca de JavaScript, creada inicialmente por John Resig, que permite simplificar la manera de interactuar con los documentos HTML">jQuery</a>.</p>
           <?php printMenu("JavaScript") ?>
           <ul>
-            <?php printList('javascript') ?>
+            <?php getLinks('javascript') ?>
           </ul>
         </div><!--/span-->
         <div class="span4">
@@ -66,7 +66,7 @@ ob_start("toStatic");
           <p>CSS significa Cascade Style Sheeting, que traduce estilos de hoja en cascada. CSS es lo que hace que las paginas web (HTML) tengan una apariencia y organizacion.</p>
           <?php printMenu("CSS3") ?>
           <ul>
-            <?php printList('css3') ?>
+            <?php getLinks('css3') ?>
           </ul>
           <ul>
           </ul>
@@ -79,7 +79,7 @@ ob_start("toStatic");
           <p>Python es un lenguaje de <a title="Un lenguaje interpretado es un lenguaje de programación que está diseñado para ser ejecutado por medio de un intérprete, en contraste con los lenguajes compilados. Los lenguages compilados hay que procesarlos para guardarlos como un archivo ejecutable; en los lenguages interpretados no es necesario.">programación interpretado</a> y multiparadigma con un enfoque en una sintaxis muy simple y que favorezca un código legible. Es lenguaje que usa YouTube.</p>
           <?php printMenu("Python", "http://python.org/") ?>
           <ul>
-            <?php printList('python') ?>
+            <?php getLinks('python') ?>
           </ul>
         </div><!--/span-->
         <div class="span4">
@@ -87,7 +87,7 @@ ob_start("toStatic");
           <p>Es un lenguaje multiparadigma enfocado en el desarrollo de sitios web. Es muy facil de aprender y es soportada por muchos <a title="El alojamiento web (en inglés web hosting) es el servicio que provee a los usuarios de Internet un sistema para poder almacenar información, imágenes, vídeo, o cualquier contenido accesible vía web, por ej. paginas PHP.">web hosting</a> pero sufre de algunas inconcistencias. Es el lenguaje que usa Facebook.</p>
           <?php printMenu("PHP","http://php.net/") ?>
           <ul>
-            <?php printList('php') ?>
+            <?php getLinks('php') ?>
           </ul>
         </div><!--/span-->
         <div class="span4">
@@ -95,7 +95,7 @@ ob_start("toStatic");
           <p>Es un lenguaje <a title="La programación orientada a objetos o POO es un paradigma de programación que usa 'objetos' y 'clases' en sus interacciones para diseñar aplicaciones. Como analogia se puede decir que las 'clases' son los planos dibujados para la construccion de una casa y los 'objetos' son todas las casas que se hacen a partir de ese plano.">orientado objetos</a> que se caracteriza por ser usado en grandes empresas y por su velocidad de ejecución. Es un lenguaje que Google usa extensamente.</p>
           <?php printMenu("Java_(lenguaje_de_programación)", 'http://www.java.com/en/') ?>
           <ul>
-            <?php printList('java') ?>
+            <?php getLinks('java') ?>
           </ul>
         </div><!--/span-->
       </div><!--/row-->
@@ -106,7 +106,7 @@ ob_start("toStatic");
           <p>Es un lenguaje orientado objetos que se caracteriza por ser usado en aplicaciones de escritorio y <a title="Como peliculas pero usted tiene algo de control sobre lo que sucede! :)">videojuegos</a>. Es un lenguaje que EA, Valve y otras importantes empresas de videojuegos usan.</p>
           <?php printMenu("Ruby", "http://www.ruby-lang.org/en/") ?>
           <ul>
-            <?php printList('ruby') ?>
+            <?php getLinks('ruby') ?>
           </ul>
         </div><!--/span-->
         <div class="span4">
@@ -114,7 +114,7 @@ ob_start("toStatic");
           <p>También conocido como RoR o Rails es un framework de aplicaciones web de código abierto escrito en el lenguaje de programación Ruby, siguiendo el paradigma de la arquitectura <a title="Modelo Vista Controlador (MVC) es un patrón o modelo de abstracción de desarrollo de software que separa los datos de una aplicación, la interfaz de usuario, y la lógica de negocio en tres componentes distintos. El patrón de llamada y retorno MVC (según CMU), se ve frecuentemente en aplicaciones web, donde la vista es la página HTML y el código que provee de datos dinámicos a la página.">Modelo Vista Controlador (MVC)</a>.</p>
           <?php printMenu("Ruby_on_Rails", 'http://rubyonrails.org/') ?>
           <ul>
-            <?php printList('rails') ?>
+            <?php getLinks('rails') ?>
           </ul>
         </div><!--/span-->
         <div class="span4">
@@ -122,7 +122,7 @@ ob_start("toStatic");
           <p>Es un <a title="Un lenguaje de programación de bajo nivel de abstracción es aquel en el que sus instrucciones ejercen un control directo sobre el hardware y están condicionados por la estructura física de la computadora que lo soporta.">lenguaje de bajo nivel</a> orientado objetos que se caracteriza por ser usado en aplicaciones de escritorio y videojuegos. Es un lenguaje que EA, Valve y otras importantes empresas de videojuegos usan. Es el lenguaje con el que se desarrollo Google Chrome.</p>
           <?php printMenu("C%2B%2B", "http://isocpp.org/") ?>
           <ul>
-            <?php printList('c++') ?>
+            <?php getLinks('c++') ?>
           </ul>
         </div><!--/span-->
       </div><!--/row-->
@@ -133,7 +133,7 @@ ob_start("toStatic");
           <p>Git es un <a title="Se llama control de versiones a la gestión de los diversos cambios que se realizan sobre los archivos y carpetas del proyecto">software de control de versiones</a> diseñado por Linus Torvalds, pensando en la eficiencia y la confiabilidad del mantenimiento de versiones de aplicaciones cuando estas tienen un gran número de archivos de código fuente.</p>
           <?php printMenu("Git", "http://git-scm.com/") ?>
           <ul>
-            <?php printList('git') ?>
+            <?php getLinks('git') ?>
           </ul>
         </div><!--/span-->
         <div class="span4">
@@ -141,7 +141,15 @@ ob_start("toStatic");
           <p>Node.js es un entorno de programación en la capa del servidor basado en el lenguaje de programación Javascript, con I/O de datos en una <a title="a programación dirigida por eventos es un paradigma de programación en el que tanto la estructura como la ejecución de los programas van determinados por los sucesos que ocurran en el sistema, definidos por el usuario o que ellos mismos provoquen.">arquitectura orientada a eventos</a>, y basado en el motor Javascript V8.</p>
           <?php printMenu("Node.js", "http://nodejs.org/") ?>
           <ul>
-            <?php printList('node') ?>
+            <?php getLinks('node') ?>
+          </ul>
+        </div><!--/span-->
+        <div class="span4">
+          <h2 title="Dificultad: Media">Django</h2>
+          <p>Node.js es un entorno de programación en la capa del servidor basado en el lenguaje de programación Javascript, con I/O de datos en una <a title="a programación dirigida por eventos es un paradigma de programación en el que tanto la estructura como la ejecución de los programas van determinados por los sucesos que ocurran en el sistema, definidos por el usuario o que ellos mismos provoquen.">arquitectura orientada a eventos</a>, y basado en el motor Javascript V8.</p>
+          <?php printMenu("Django_(framework)", "https://www.djangoproject.com/") ?>
+          <ul>
+            <?php getLinks('django') ?>
           </ul>
         </div><!--/span-->
       </div><!--/row-->

@@ -30,7 +30,7 @@ function printMenu($wiki, $pagOficial=''){
     <a class="btn btn_doc" href="#">Documentos</a>' . $pagOficial .'</p>';
 }
 
-function printList($file){
+function getLinks($file){
   $source = readfile('source/' . $file . '.html');
 }
 ?>
