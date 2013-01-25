@@ -146,7 +146,7 @@ ob_start("toStatic");
         </div><!--/span-->
         <div class="span4">
           <h2 title="Dificultad: Media">Django</h2>
-          <p>Node.js es un entorno de programación en la capa del servidor basado en el lenguaje de programación Javascript, con I/O de datos en una <a title="a programación dirigida por eventos es un paradigma de programación en el que tanto la estructura como la ejecución de los programas van determinados por los sucesos que ocurran en el sistema, definidos por el usuario o que ellos mismos provoquen.">arquitectura orientada a eventos</a>, y basado en el motor Javascript V8.</p>
+          <p>Django es un framework de desarrollo web de código abierto, escrito en Python, que cumple en cierta medida el paradigma del Modelo Vista Controlador. Fue desarrollado en origen para gestionar varias páginas orientadas a noticias de la World Company de Lawrence, Kansas, y fue liberada al público bajo una <a title="El software libre (en inglés free software, aunque esta denominación también se confunde a veces con 'gratis' por la ambigüedad del término 'free' en el idioma inglés, por lo que también se usan 'libre software' y 'logical libre') es la denominación del software que respeta la libertad de todos los usuarios que adquirieron el producto y, por tanto, una vez obtenido el mismo puede ser usado, copiado, estudiado, modificado, y redistribuido libremente de varias formas.">licencia BSD</a> en julio de 2005.</p>
           <?php printMenu("Django_(framework)", "https://www.djangoproject.com/") ?>
           <ul>
             <?php getLinks('django') ?>
