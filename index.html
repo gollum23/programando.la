@@ -7,8 +7,8 @@
     <meta name="description" content="Aprender programacion gratis por que aqui SI estamos mejorandola.">
     <meta name="author" content="Ivan castellanos">
     <meta name="twitter" content="ivanca">
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />    
-    <link href="css/bootstrap-responsive.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap.min.css?nocahe=1" rel="stylesheet" type="text/css" />    
+    <link href="css/bootstrap-responsive.css?nocahe=1" rel="stylesheet" type="text/css" />
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -20,7 +20,23 @@
   </head>
 
   <body class="nojs">
+
     <script>document.body && (document.body.className = "");</script>
+
+    <div class="alert-message info hide">
+        <a class="close" href="#">×</a>
+        <p></p>
+    </div>
+    <script>
+    var msg = decodeURIComponent(document.cookie).match(/message=[^@;]+/);
+    if(msg) {
+      msg = msg ? msg[0].replace("message=", "").replace(/\+/g, ' ') : '';
+      document.getElementsByTagName("div")[0].className += 'no';
+      document.getElementsByTagName("p")[0].innerHTML = msg || 'Operacion realizada con satisfaccion!';
+      document.cookie = "message=@;";
+    }
+    </script>
+
     <div class="container">
       <div class="hero-unit">
         <h1 class="hero-title">Programando.la!</h1>
@@ -29,6 +45,7 @@
         <div class="lol"></div>
       </div>
       <div class="row">
+        
         <div class="span4">
           <h2 title="Dificultad: Muy facil">Paginas web HTML5</h2>
           <p>Aprende a crear paginas web de la forma moderna con todos los beneficios que esta trae.</p>
@@ -36,10 +53,10 @@
     <a class="btn btn_video_es" href="#">V&iacute;deos en Espa&ntilde;ol</a>
     <!-- <a class="btn btn_video_en" href="#">Videos en Ingles</a> -->
   </p>
-  <p class=text_links>
+  <p class="text_links" data-lang="html5">
     <a class="btn" href="http://es.wikipedia.org/wiki/HTML5" target="_blank">Wikipedia</a>
-    <a class="btn btn_doc" href="#">Documentos</a></p>          <ul>
-            <!-- Extraido desde http://www.google.es/#hl=en&tbo=d&sclient=psy-ab&q=HTML5+tutoriales&oq=HTML…r_gc.r_pw.r_qf.&bvm=bv.41018144,d.eWU&fp=70e84d9626a23a71&biw=1920&bih=955 -->
+    <a class="btn btn_doc" href="#">Documentos</a>
+    <a class="btn btn_add" data-toggle="modal" href="#myModal" role="button" title="Agregar un nuevo link" >+</a></p><ul><!-- Extraido desde http://www.google.es/#hl=en&tbo=d&sclient=psy-ab&q=HTML5+tutoriales&oq=HTML…r_gc.r_pw.r_qf.&bvm=bv.41018144,d.eWU&fp=70e84d9626a23a71&biw=1920&bih=955 -->
 <li>
   <a class="doc" href="http://html5tutoriales.com/tutoriales/tutorial-basico/iniciando-con-html5.html">Tutoriales HTML5 y CSS3</a>
 </li>
@@ -127,8 +144,8 @@
 </li>
 <li>
   <a class="video_es" href="http://www.youtube.com/watch?v=IHrNXjszv5A" target="_blank">Atributos</a>
-</li>          </ul>
-        </div><!--/span-->
+</li></ul>        </div><!--/span-->
+        
         <div class="span4">
           <h2  title="Dificultad: Moderada">Javascript y jQuery</h2>
           <p>Es un lenguaje <a title="Programaci&oacute;n basada en prototipos es un estilo de programaci&oacute;n orientada a objetos en el cual, las 'clases' no est&aacute;n presentes, pero la reutilizacion de codigo se hace a travez de clonacion de objetos persistentes. Los cuales sirven de base para el nuevo objeto.">basado en prototipos</a> y es el <a title="Javascript se utiliza principalmente en su forma del lado del cliente (client-side), implementado como parte de un navegador web permitiendo mejoras en la interfaz de usuario y p&aacute;ginas web din&aacute;micas, en bases de datos locales al navegador. Tambi&eacute;n existe una forma de JavaScript del lado del servidor, la mas popular es Node.JS">unico</a> usado para proveer interactividad en la web. Tambi&eacute;n se ense&ntilde;a un poco sobre <a title="jQuery es una biblioteca de JavaScript, creada inicialmente por John Resig, que permite simplificar la manera de interactuar con los documentos HTML">jQuery</a>.</p>
@@ -136,10 +153,10 @@
     <a class="btn btn_video_es" href="#">V&iacute;deos en Espa&ntilde;ol</a>
     <!-- <a class="btn btn_video_en" href="#">Videos en Ingles</a> -->
   </p>
-  <p class=text_links>
+  <p class="text_links" data-lang="javascript">
     <a class="btn" href="http://es.wikipedia.org/wiki/JavaScript" target="_blank">Wikipedia</a>
-    <a class="btn btn_doc" href="#">Documentos</a></p>          <ul>
-            <!-- Extraido desde https://www.google.com/search?q=javascript&oq=javascript&aqs=chrome.0.57j60…r_pw.r_cp.r_qf.&bvm=bv.41018144,d.eWU&fp=65fe59e85b7b1b3b&biw=1020&bih=697 -->
+    <a class="btn btn_doc" href="#">Documentos</a>
+    <a class="btn btn_add" data-toggle="modal" href="#myModal" role="button" title="Agregar un nuevo link" >+</a></p><ul><!-- Extraido desde https://www.google.com/search?q=javascript&oq=javascript&aqs=chrome.0.57j60…r_pw.r_cp.r_qf.&bvm=bv.41018144,d.eWU&fp=65fe59e85b7b1b3b&biw=1020&bih=697 -->
 <li>
   <a target="_blank" class="doc" href="http://www.javascriptya.com.ar/">JavaScript Ya</a>
 </li>
@@ -263,8 +280,8 @@
 </li>
 <li>
   <a class="video_es" href="http://www.youtube.com/watch?v=ZDtN2Dm1LYM" target="_blank">34. jQuery: M&eacute;todo getJSON</a>
-</li>          </ul>
-        </div><!--/span-->
+</li></ul>        </div><!--/span-->
+        
         <div class="span4">
           <h2 title="Dificultad: Facil">CSS3</h2>
           <p>CSS significa Cascade Style Sheeting, que traduce estilos de hoja en cascada. CSS es lo que hace que las paginas web (HTML) tengan una apariencia y organizacion.</p>
@@ -272,10 +289,10 @@
     <a class="btn btn_video_es" href="#">V&iacute;deos en Espa&ntilde;ol</a>
     <!-- <a class="btn btn_video_en" href="#">Videos en Ingles</a> -->
   </p>
-  <p class=text_links>
+  <p class="text_links" data-lang="css3">
     <a class="btn" href="http://es.wikipedia.org/wiki/CSS3" target="_blank">Wikipedia</a>
-    <a class="btn btn_doc" href="#">Documentos</a></p>          <ul>
-            <!-- Extraido desde http://designm.ag/resources/30-excellent-css3-tutorials/ -->
+    <a class="btn btn_doc" href="#">Documentos</a>
+    <a class="btn btn_add" data-toggle="modal" href="#myModal" role="button" title="Agregar un nuevo link" >+</a></p><ul><!-- Extraido desde http://designm.ag/resources/30-excellent-css3-tutorials/ -->
 <!-- 
    var n = "\r\n";
 "<!-"+"- Extraido desde " + String(document.location) + " -"+"->" + n + $$$($0).find("a").filter(function(){ return this.href.indexOf("designm.ag") === -1 && $$$(this).find("img").length == 0 }).map(function(){
@@ -428,13 +445,11 @@
 </li>
 <li>
   <a class="video_es" href="http://www.youtube.com/watch?v=t1UiQ5f8K_k" target="_blank">18. CSS: Position</a>
-</li>          </ul>
-          <ul>
-          </ul>
-        </div><!--/span-->
+</li></ul>        </div><!--/span-->
       </div><!--/row-->
 
       <div class="row">
+        
         <div class="span4">
           <h2 title="Dificultad: Moderada">Python</h2>
           <p>Python es un lenguaje de <a title="Un lenguaje interpretado es un lenguaje de programaci&oacute;n que est&aacute; dise&ntilde;ado para ser ejecutado por medio de un int&eacute;rprete, en contraste con los lenguajes compilados. Los lenguages compilados hay que procesarlos para guardarlos como un archivo ejecutable; en los lenguages interpretados no es necesario.">programaci&oacute;n interpretado</a> y multiparadigma con un enfoque en una sintaxis muy simple y que favorezca un c&oacute;digo legible. Es lenguaje que usa YouTube.</p>
@@ -442,10 +457,10 @@
     <a class="btn btn_video_es" href="#">V&iacute;deos en Espa&ntilde;ol</a>
     <!-- <a class="btn btn_video_en" href="#">Videos en Ingles</a> -->
   </p>
-  <p class=text_links>
+  <p class="text_links" data-lang="python">
     <a class="btn" href="http://es.wikipedia.org/wiki/Python" target="_blank">Wikipedia</a>
-    <a class="btn btn_doc" href="#">Documentos</a><a class="btn btn_docs" target="_blank" href=http://python.org/>Pagina oficial</a></p>          <ul>
-            <!-- Extraido desde http://mundogeek.net/tutorial-python/ -->
+    <a class="btn btn_doc" href="#">Documentos</a><a class="btn btn_docs" target="_blank" href=http://python.org/>Pagina oficial</a>
+    <a class="btn btn_add" data-toggle="modal" href="#myModal" role="button" title="Agregar un nuevo link" >+</a></p><ul><!-- Extraido desde http://mundogeek.net/tutorial-python/ -->
 
 <li>
   <a class="doc" href="http://python.org.ar/pyar/Tutorial?action=AttachFile&do=get&target=TutorialPython.pdf">Manual Oficial en Espa&ntilde;ol - PDF</a>
@@ -550,8 +565,8 @@
 </li>
 <li>
   <a class="video_es" href="http://www.youtube.com/watch?v=xNhF17scwlU" target="_blank">Modulos (Modules)</a>
-</li>          </ul>
-        </div><!--/span-->
+</li></ul>        </div><!--/span-->
+        
         <div class="span4">
           <h2 title="Dificultad: Facil">PHP</h2>
           <p>Es un lenguaje multiparadigma enfocado en el desarrollo de sitios web. Es muy facil de aprender y es soportada por muchos <a title="El alojamiento web (en ingl&eacute;s web hosting) es el servicio que provee a los usuarios de Internet un sistema para poder almacenar informaci&oacute;n, im&aacute;genes, v&iacute;deo, o cualquier contenido accesible v&iacute;a web, por ej. paginas PHP.">web hosting</a> pero sufre de algunas inconcistencias. Es el lenguaje que usa Facebook.</p>
@@ -559,10 +574,10 @@
     <a class="btn btn_video_es" href="#">V&iacute;deos en Espa&ntilde;ol</a>
     <!-- <a class="btn btn_video_en" href="#">Videos en Ingles</a> -->
   </p>
-  <p class=text_links>
+  <p class="text_links" data-lang="php">
     <a class="btn" href="http://es.wikipedia.org/wiki/PHP" target="_blank">Wikipedia</a>
-    <a class="btn btn_doc" href="#">Documentos</a><a class="btn btn_docs" target="_blank" href=http://php.net/>Pagina oficial</a></p>          <ul>
-            <!-- Extraido desde http://www.youtube.com/playlist?list=PLF02659CF8418C229 -->
+    <a class="btn btn_doc" href="#">Documentos</a><a class="btn btn_docs" target="_blank" href=http://php.net/>Pagina oficial</a>
+    <a class="btn btn_add" data-toggle="modal" href="#myModal" role="button" title="Agregar un nuevo link" >+</a></p><ul><!-- Extraido desde http://www.youtube.com/playlist?list=PLF02659CF8418C229 -->
 <li>
   <a class="doc" href="http://php.net/manual/es/tutorial.php">El Tutorial Oficial</a>
 </li>
@@ -659,8 +674,8 @@
 <li>
   <a class="video_es" href="http://www.youtube.com/watch?v=jPt8GTu2O7Y" target="_blank">C&oacute;mo Modificar Registros en una Base de Datos</a>
 </li>
-          </ul>
-        </div><!--/span-->
+</ul>        </div><!--/span-->
+        
         <div class="span4">
           <h2 title="Dificultad: Sobresaliente">Java</h2>
           <p>Es un lenguaje <a title="La programaci&oacute;n orientada a objetos o POO es un paradigma de programaci&oacute;n que usa 'objetos' y 'clases' en sus interacciones para dise&ntilde;ar aplicaciones. Como analogia se puede decir que las 'clases' son los planos dibujados para la construccion de una casa y los 'objetos' son todas las casas que se hacen a partir de ese plano.">orientado objetos</a> que se caracteriza por ser usado en grandes empresas y por su velocidad de ejecuci&oacute;n. Es un lenguaje que Google usa extensamente.</p>
@@ -668,10 +683,10 @@
     <a class="btn btn_video_es" href="#">V&iacute;deos en Espa&ntilde;ol</a>
     <!-- <a class="btn btn_video_en" href="#">Videos en Ingles</a> -->
   </p>
-  <p class=text_links>
+  <p class="text_links" data-lang="java">
     <a class="btn" href="http://es.wikipedia.org/wiki/Java_(lenguaje_de_programaci&oacute;n)" target="_blank">Wikipedia</a>
-    <a class="btn btn_doc" href="#">Documentos</a><a class="btn btn_docs" target="_blank" href=http://www.java.com/en/>Pagina oficial</a></p>          <ul>
-            <li>
+    <a class="btn btn_doc" href="#">Documentos</a><a class="btn btn_docs" target="_blank" href=http://www.java.com/en/>Pagina oficial</a>
+    <a class="btn btn_add" data-toggle="modal" href="#myModal" role="button" title="Agregar un nuevo link" >+</a></p><ul><li>
   <a class="doc" href="http://www.chuidiang.com/java/novatos/index.php">Tutoriales java para novatos</a>
 </li>
 <li>
@@ -761,11 +776,12 @@
 </li>
 <li>
   <a class="video_es" href="http://www.youtube.com/watch?v=9iz8NWFb_NA" target="_blank">29. Tutorial Java: Eventos en aplicaciones gr&aacute;ficas</a>
-</li>          </ul>
-        </div><!--/span-->
+</li></ul>        </div><!--/span-->
+     
       </div><!--/row-->
 
       <div class="row">
+        
         <div class="span4">
           <h2 title="Dificultad: Moderada">Ruby</h2>
           <p>Es un lenguaje orientado objetos que se caracteriza por ser usado en aplicaciones de escritorio y <a title="Como peliculas pero usted tiene algo de control sobre lo que sucede! :)">videojuegos</a>. Es un lenguaje que EA, Valve y otras importantes empresas de videojuegos usan.</p>
@@ -773,10 +789,10 @@
     <a class="btn btn_video_es" href="#">V&iacute;deos en Espa&ntilde;ol</a>
     <!-- <a class="btn btn_video_en" href="#">Videos en Ingles</a> -->
   </p>
-  <p class=text_links>
+  <p class="text_links" data-lang="ruby">
     <a class="btn" href="http://es.wikipedia.org/wiki/Ruby" target="_blank">Wikipedia</a>
-    <a class="btn btn_doc" href="#">Documentos</a><a class="btn btn_docs" target="_blank" href=http://www.ruby-lang.org/en/>Pagina oficial</a></p>          <ul>
-            <li>
+    <a class="btn btn_doc" href="#">Documentos</a><a class="btn btn_docs" target="_blank" href=http://www.ruby-lang.org/en/>Pagina oficial</a>
+    <a class="btn btn_add" data-toggle="modal" href="#myModal" role="button" title="Agregar un nuevo link" >+</a></p><ul><li>
 	<a class="doc" href="http://rubytutorial.wikidot.com/" target="_blank">Tutorial completo de Ruby en espa&ntilde;ol</a>
 </li>
 <!-- Extraido desde http://www.youtube.com/playlist?list=PLEFC2D43C36013A70 -->
@@ -869,8 +885,8 @@
 </li>
 <li>
 	<a class="video_es" href="http://www.youtube.com/watch?v=TFqQgQ1-xuY" target="_blank">34: M&eacute;todos accesores</a>
-</li>          </ul>
-        </div><!--/span-->
+</li></ul>        </div><!--/span-->
+        
         <div class="span4">
           <h2 title="Dificultad: Facil/Moderada">Ruby On Rails</h2>
           <p>Tambi&eacute;n conocido como RoR o Rails es un framework de aplicaciones web de c&oacute;digo abierto escrito en el lenguaje de programaci&oacute;n Ruby, siguiendo el paradigma de la arquitectura <a title="Modelo Vista Controlador (MVC) es un patr&oacute;n o modelo de abstracci&oacute;n de desarrollo de software que separa los datos de una aplicaci&oacute;n, la interfaz de usuario, y la l&oacute;gica de negocio en tres componentes distintos. El patr&oacute;n de llamada y retorno MVC (seg&uacute;n CMU), se ve frecuentemente en aplicaciones web, donde la vista es la p&aacute;gina HTML y el c&oacute;digo que provee de datos din&aacute;micos a la p&aacute;gina.">Modelo Vista Controlador (MVC)</a>.</p>
@@ -878,10 +894,10 @@
     <a class="btn btn_video_es" href="#">V&iacute;deos en Espa&ntilde;ol</a>
     <!-- <a class="btn btn_video_en" href="#">Videos en Ingles</a> -->
   </p>
-  <p class=text_links>
+  <p class="text_links" data-lang="rails">
     <a class="btn" href="http://es.wikipedia.org/wiki/Ruby_on_Rails" target="_blank">Wikipedia</a>
-    <a class="btn btn_doc" href="#">Documentos</a><a class="btn btn_docs" target="_blank" href=http://rubyonrails.org/>Pagina oficial</a></p>          <ul>
-            <li>
+    <a class="btn btn_doc" href="#">Documentos</a><a class="btn btn_docs" target="_blank" href=http://rubyonrails.org/>Pagina oficial</a>
+    <a class="btn btn_add" data-toggle="modal" href="#myModal" role="button" title="Agregar un nuevo link" >+</a></p><ul><li>
 	<a class="doc" href="http://www.hackerdude.com/courses/rails/" target="_blank">Tutor de Ruby on Rails</a>
 </li>
 
@@ -972,8 +988,8 @@
 </li>
 <li>
 	<a class="video_es" href="http://www.youtube.com/watch?v=0mgzmBjvo8Q" target="_blank">29: Relaci&oacute;n Usuario-posts</a>
-</li>          </ul>
-        </div><!--/span-->
+</li></ul>        </div><!--/span-->
+        
         <div class="span4">
           <h2 title="Dificultad: Dificil/Moderada">C++</h2>
           <p>Es un <a title="Un lenguaje de programaci&oacute;n de bajo nivel de abstracci&oacute;n es aquel en el que sus instrucciones ejercen un control directo sobre el hardware y est&aacute;n condicionados por la estructura f&iacute;sica de la computadora que lo soporta.">lenguaje de bajo nivel</a> orientado objetos que se caracteriza por ser usado en aplicaciones de escritorio y videojuegos. Es un lenguaje que EA, Valve y otras importantes empresas de videojuegos usan. Es el lenguaje con el que se desarrollo Google Chrome.</p>
@@ -981,10 +997,10 @@
     <a class="btn btn_video_es" href="#">V&iacute;deos en Espa&ntilde;ol</a>
     <!-- <a class="btn btn_video_en" href="#">Videos en Ingles</a> -->
   </p>
-  <p class=text_links>
+  <p class="text_links" data-lang="c++">
     <a class="btn" href="http://es.wikipedia.org/wiki/C%2B%2B" target="_blank">Wikipedia</a>
-    <a class="btn btn_doc" href="#">Documentos</a><a class="btn btn_docs" target="_blank" href=http://isocpp.org/>Pagina oficial</a></p>          <ul>
-            <!-- Extraido desde http://www.youtube.com/playlist?list=PL4A486BBFC5AD733B -->
+    <a class="btn btn_doc" href="#">Documentos</a><a class="btn btn_docs" target="_blank" href=http://isocpp.org/>Pagina oficial</a>
+    <a class="btn btn_add" data-toggle="modal" href="#myModal" role="button" title="Agregar un nuevo link" >+</a></p><ul><!-- Extraido desde http://www.youtube.com/playlist?list=PL4A486BBFC5AD733B -->
 <li>
 	<a class="doc" href="http://es.tldp.org/Manuales-LuCAS/doc-tutorial-c++/doc-tutorial-c++.pdf" target="_blank">Manual completo e informal de C++ [PDF]</a>
 </li>
@@ -1068,11 +1084,12 @@
 </li>
 <li>
 	<a class="video_es" href="http://www.youtube.com/watch?v=lBhSrZd7oW8" target="_blank">26. Clases</a>
-</li>          </ul>
-        </div><!--/span-->
+</li></ul>        </div><!--/span-->
+     
       </div><!--/row-->
 
       <div class="row">
+        
         <div class="span4">
           <h2 title="Dificultad: Facil">Git y Github</h2>
           <p>Git es un <a title="Se llama control de versiones a la gesti&oacute;n de los diversos cambios que se realizan sobre los archivos y carpetas del proyecto">software de control de versiones</a> dise&ntilde;ado por Linus Torvalds, pensando en la eficiencia y la confiabilidad del mantenimiento de versiones de aplicaciones cuando estas tienen un gran n&uacute;mero de archivos de c&oacute;digo fuente.</p>
@@ -1080,10 +1097,10 @@
     <a class="btn btn_video_es" href="#">V&iacute;deos en Espa&ntilde;ol</a>
     <!-- <a class="btn btn_video_en" href="#">Videos en Ingles</a> -->
   </p>
-  <p class=text_links>
+  <p class="text_links" data-lang="git">
     <a class="btn" href="http://es.wikipedia.org/wiki/Git" target="_blank">Wikipedia</a>
-    <a class="btn btn_doc" href="#">Documentos</a><a class="btn btn_docs" target="_blank" href=http://git-scm.com/>Pagina oficial</a></p>          <ul>
-            <!-- Extraido desde http://git-scm.com/ -->
+    <a class="btn btn_doc" href="#">Documentos</a><a class="btn btn_docs" target="_blank" href=http://git-scm.com/>Pagina oficial</a>
+    <a class="btn btn_add" data-toggle="modal" href="#myModal" role="button" title="Agregar un nuevo link" >+</a></p><ul><!-- Extraido desde http://git-scm.com/ -->
 <li>
 	<a target="_blank" class="doc" href="http://git-scm.com/book/es">Ayuda oficial en espa&ntilde;ol</a>
 </li>
@@ -1112,8 +1129,8 @@
 </li>
 <li>
 	<a target="_blank" class="video_es" href="http://www.youtube.com/watch?v=MuNnhLATJUU">Github: GitHub en Windows, instalaci&oacute;n</a> 
-</li>          </ul>
-        </div><!--/span-->
+</li></ul>        </div><!--/span-->
+        
         <div class="span4">
           <h2 title="Dificultad: Media">Node.js</h2>
           <p>Node.js es un entorno de programaci&oacute;n en la capa del servidor basado en el lenguaje de programaci&oacute;n Javascript, con I/O de datos en una <a title="a programaci&oacute;n dirigida por eventos es un paradigma de programaci&oacute;n en el que tanto la estructura como la ejecuci&oacute;n de los programas van determinados por los sucesos que ocurran en el sistema, definidos por el usuario o que ellos mismos provoquen.">arquitectura orientada a eventos</a>, y basado en el motor Javascript V8.</p>
@@ -1121,10 +1138,10 @@
     <a class="btn btn_video_es" href="#">V&iacute;deos en Espa&ntilde;ol</a>
     <!-- <a class="btn btn_video_en" href="#">Videos en Ingles</a> -->
   </p>
-  <p class=text_links>
+  <p class="text_links" data-lang="node">
     <a class="btn" href="http://es.wikipedia.org/wiki/Node.js" target="_blank">Wikipedia</a>
-    <a class="btn btn_doc" href="#">Documentos</a><a class="btn btn_docs" target="_blank" href=http://nodejs.org/>Pagina oficial</a></p>          <ul>
-            <!-- Extraido desde http://www.nodebeginner.org/-->
+    <a class="btn btn_doc" href="#">Documentos</a><a class="btn btn_docs" target="_blank" href=http://nodejs.org/>Pagina oficial</a>
+    <a class="btn btn_add" data-toggle="modal" href="#myModal" role="button" title="Agregar un nuevo link" >+</a></p><ul><!-- Extraido desde http://www.nodebeginner.org/-->
 <li>
 	<a class="doc" href="http://www.nodebeginner.org/index-es.html" target="_blank">Tutorial Completo para Principiantes en Node.js</a>
 </li>
@@ -1217,8 +1234,8 @@
 </li>
 <li>
 	<a class="video_es" href="http://www.youtube.com/watch?v=mnB_KUBlf2k" target="_blank">029. Publicar nuestros proyectos.</a>
-</li>          </ul>
-        </div><!--/span-->
+</li></ul>        </div><!--/span-->
+        
         <div class="span4">
           <h2 title="Dificultad: Media">Django</h2>
           <p>Django es un framework de desarrollo web de c&oacute;digo abierto, escrito en Python, que cumple en cierta medida el paradigma del Modelo Vista Controlador. Fue desarrollado en origen para gestionar varias p&aacute;ginas orientadas a noticias de la World Company de Lawrence, Kansas, y fue liberada al p&uacute;blico bajo una <a title="El software libre (en ingl&eacute;s free software, aunque esta denominaci&oacute;n tambi&eacute;n se confunde a veces con 'gratis' por la ambigüedad del t&eacute;rmino 'free' en el idioma ingl&eacute;s, por lo que tambi&eacute;n se usan 'libre software' y 'logical libre') es la denominaci&oacute;n del software que respeta la libertad de todos los usuarios que adquirieron el producto y, por tanto, una vez obtenido el mismo puede ser usado, copiado, estudiado, modificado, y redistribuido libremente de varias formas.">licencia BSD</a> en julio de 2005.</p>
@@ -1226,10 +1243,10 @@
     <a class="btn btn_video_es" href="#">V&iacute;deos en Espa&ntilde;ol</a>
     <!-- <a class="btn btn_video_en" href="#">Videos en Ingles</a> -->
   </p>
-  <p class=text_links>
+  <p class="text_links" data-lang="django">
     <a class="btn" href="http://es.wikipedia.org/wiki/Django_(framework)" target="_blank">Wikipedia</a>
-    <a class="btn btn_doc" href="#">Documentos</a><a class="btn btn_docs" target="_blank" href=https://www.djangoproject.com/>Pagina oficial</a></p>          <ul>
-            <!-- Extraido desde https://www.google.com/search?q=libro+gratis+de+Django+en+espa%C3%B1ol&oq=libro+gratis+de+Django+en+espa%C3%B1ol&sourceid=chrome&ie=UTF-8&hl=en -->
+    <a class="btn btn_doc" href="#">Documentos</a><a class="btn btn_docs" target="_blank" href=https://www.djangoproject.com/>Pagina oficial</a>
+    <a class="btn btn_add" data-toggle="modal" href="#myModal" role="button" title="Agregar un nuevo link" >+</a></p><ul><!-- Extraido desde https://www.google.com/search?q=libro+gratis+de+Django+en+espa%C3%B1ol&oq=libro+gratis+de+Django+en+espa%C3%B1ol&sourceid=chrome&ie=UTF-8&hl=en -->
 <li>
 	<a class="doc" href="http://bibing.us.es/proyectos/abreproy/12051/fichero/libros%252Flibro-django.pdf" target="_blank">El libro de Django [ESP]</a>
 </li>
@@ -1296,10 +1313,10 @@
 	<a class="video_es" href="http://www.youtube.com/watch?v=MRteeiWJQts" target="_blank">20. Consumiendo Webservices con Jquery</a>
 </li>
 <li>
-	<a class="video_es" href="https://www.youtube.com/watch?v=qI7vCoxhcKs" target="_blank">21. Editar información de un Registro</a>
+	<a class="video_es" href="https://www.youtube.com/watch?v=qI7vCoxhcKs" target="_blank">21. Editar informaci&oacute;n de un Registro</a>
 </li>
-</ul>
-        </div><!--/span-->
+</ul>        </div><!--/span-->
+     
       </div><!--/row-->
 
       <hr>
@@ -1319,10 +1336,37 @@ THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
     </div>
 
+    <div id="myModal" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Contribuir un link</h3>
+      </div>
+      <div class="modal-body">
+    <form id="link-form" action="save_url.php" method="post">
+
+      <fieldset>
+        <label >Titulo:*</label>
+        <input type="text" name="name" id="name" placeholder="Escriba un titulo descriptivo." class="large-input" />
+
+        <label >Link:*</label>
+        <input type="text" name="link" id="link" placeholder="Ingrese la URL del documento o video" class="large-input" />
+
+        <label >Twitter:</label>
+        <input type="text" name="twitter" id="twitter" placeholder="Opcional"  maxlength="20" /> 
+        
+        <input type="hidden" name="lang" id="lang" /> 
+        <button type="submit" class="btn submit-link">Submit</button>
+      </fieldset>
+
+    </form>
+    </div>
+          
+    </div>
+
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>    
-	<script src="js/jquery.qtip-1.0.0-rc3.min.js"></script>  
-  <script src="js/app.js"></script>  
+  <script src="js/jquery.qtip-1.0.0-rc3.min.js"></script>  
+	<script src="js/bootstrap.min.js"></script>  
+  <script src="js/app.js?nocahe=1"></script>  
 
   </body>
 </html>
