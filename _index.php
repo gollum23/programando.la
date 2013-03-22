@@ -3,18 +3,11 @@
 // Este archivo es el que se usa para generar la pagina principal
 // que se le muestra a todos los usuarios.
 // De esta forma mostrar la pagina es algo mas ligero y rapido para el servidor.
-
-require("functions.php");
-
-if( !local() ){
-  throw new Exception(
-    'Este script es para ser ejecutado unicamente en'
-    . ' un contexto local, no directamente en produccion.'
-  );
-}
-
+require("includes/functions.php");
+onlyLocalAllowed();
 saveSchema();
 
+define("FILE_NAME", 'index.html');
 ob_start("toStatic"); 
 
 ?><!DOCTYPE html>
@@ -25,9 +18,8 @@ ob_start("toStatic");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Aprender programacion gratis por que aqui SI estamos mejorandola.">
     <meta name="author" content="Ivan castellanos">
-    <meta name="twitter" content="ivanca">
-    <link href="css/bootstrap.min.css?nocahe=1" rel="stylesheet" type="text/css" />    
-    <link href="css/bootstrap-responsive.css?nocahe=1" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap.min.css?nocahe=666" rel="stylesheet" type="text/css" />    
+    <link href="css/bootstrap-responsive.css?nocahe=2" rel="stylesheet" type="text/css" />
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -57,6 +49,16 @@ ob_start("toStatic");
     </script>
 
     <div class="container">
+      <div class="social">
+
+        <!-- Twitter -->
+        <a href="https://twitter.com/Programandola" class="twitter-follow-button" data-show-count="false" data-lang="es" data-show-screen-name="false">Seguir a @Programandola</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+        <!-- Carelibro -->
+        <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2FProgramandola&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=217260124964315" style="border:none; overflow:hidden; width:100px; height:21px;overflow:hidden;border:0"></iframe>
+
+</div>
       <div class="hero-unit">
         <h1 class="hero-title">Programando.la!</h1>
         <img src="img/logo.png" alt="@Freddier y su fiel amigo">

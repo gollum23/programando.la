@@ -18,47 +18,40 @@
 
 	function validate () {
 
-		var r = true;
+		var valid = true;
 
-		if ($("#name").isEmpty()) {
-			$("#name").addClass("error-form");
-			r = false;
-		} else {
-			$("#name").removeClass("error-form");
-		}
+		var validation = [
+			{query: "#name", regex: /./ },
+			{query: "#link", regex: /^https?:\/\// },
+			{query: "#twitter", regex: /^[0-9a-z_@]*$/i, optional: true }
+		];
 
-		if ($("#link").isEmpty() || !/^https?:\/\//.test($("#link").val())) {
-			$("#link").addClass("error-form");
-			r = false;
-		} else {
-			$("#link").removeClass("error-form");
-		}
-
-		if (!$("#twitter").isEmpty() && /[^0-9a-z_@]/i.test($("#twitter").val())) {
-			$("#twitter").addClass("error-form");
-			r = false;
-		} else {
-			$("#twitter").removeClass("error-form");
-		}
-
-		return r;
+		$.each(validation, function (i, rule){
+			var $ele = $(rule.query);
+			$ele.removeClass("error-form");
+			if ( ($ele.isEmpty() && !rule.optional) || !rule.regex.test($ele.val()) ) {
+				$ele.addClass("error-form");
+				valid = false;
+			}
+		});
+		return valid;
 	}
 
+
+	$("#name, #link, #twitter").on('keyup keydown keypress', function (){
+		validate();
+	});
+
+
 	$("#link-form").submit(function (){
-		if (!validate.once) {
-			$("#name, #link").on('keyup keydown keypress', function (){
-				validate();
-			});
-		}
-
-		validate.once = true;
-
-		if(!validate()) {
+		validate();
+		$( this ).addClass( 'show-errors' );
+		if ($( ".error-form" ).length > 0) {
 			return false;
 		}
 		return true;
-
 	});
+
 
 	$("#link-form input").click(function (params){
 		var that = this;
@@ -68,6 +61,10 @@
 	});
 
 	$('a[title]').addClass("expand").qtip({style: {name: 'dark', tip: true}, position: { adjust: { screen: true } } });
+
+	setTimeout(function (){
+		$(".social").animate({opacity: 1});
+	}, 200);
 
 	$(".container").on("click", ".btn_video_es, .btn_video_en, .btn_doc", function (event) {
 		var showClass = '.' + $(this).attr("class").match(/btn_([_a-z]+)/i)[1];
@@ -89,11 +86,12 @@
 	// Nubes de dialogo del comic
 
 	var waitForHold = false;
+	var waitTo = -1;
 
 	function holdLoop() {
 		waitForHold = true;
-		clearTimeout(holdLoop.to);
-		holdLoop.to = setTimeout(function () {
+		clearTimeout(waitTo);
+		waitTo = setTimeout(function () {
 			waitForHold = false;
 		}, 7000);
 	}
@@ -101,23 +99,24 @@
 	setTimeout(function () {
 		var prev = -1;
 		var random;
-		(function loop(loading) {
+		var $img = $('<img />');
+		(function loop (loading) {
 			if (waitForHold) {
 				setTimeout(loop, 5000);
 				return;
 			}
 			if (!loading) {
 				do {
-					random = (Math.random() * 10) | 0;
+					random = Math.floor(Math.random() * 10);
 				} while (random === prev);
 				prev = random;
+				$img.attr('src', 'img/txt' + random + '.png');
 			}
-			var $img = $('<img src="img/txt' + random + '.png" >');
 			if ($img.prop("complete")) {
-				$img.css({opacity: 0}).appendTo(".lol").fadeTo('slow', 1);
+				$img.css({opacity: 0}).show().appendTo(".lol").fadeTo('slow', 1);
 				setTimeout(function () {
 					$img.fadeTo(2000, 0, function () {
-						$(this).remove();
+						$(this).hide();
 						setTimeout(loop, 5000);
 					});
 				}, 13000);

@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+
+# Si el archivo no existe que lo busque dentro de la carpeta /page/
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ pages/$1 [L]
+
+</IfModule>
+
