@@ -1307,9 +1307,9 @@ a[role="button"]:focus
 
 /* changes for pretyPhoto */
 
-div.light_rounded .pp_close{
+div.pp_default .pp_close{
 	top: 0;
-	left: 0;
+	right: 0;
 }
 
 div.pp_default .pp_nav .pp_play, div.pp_default .pp_nav .pp_pause {
