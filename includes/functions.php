@@ -38,12 +38,13 @@ function printData($file, $wiki, $pagOficial=''){
 function dbConnection(){
   
   if ( !file_exists('includes/auth.php') ) {
-    exit("Usted debe crear un archivo auth.php donde defina
+    exit("Usted debe crear un archivo auth.php en la carpeta 'includes' donde defina
      las constantes DB_HOST, DB_USER y DB_PASS con los parametros
      para acceder a la base de datos.
      ");
   }
   include "includes/auth.php";
+
 
   $dbh = new PDO('mysql:dbname=programandola;host=' . DB_HOST, DB_USER, DB_PASS);
   $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

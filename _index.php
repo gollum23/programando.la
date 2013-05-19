@@ -29,14 +29,9 @@ ob_start("toStatic");
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
     <!-- prettyPhoto: modalbox para videos -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
     <link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen"/>
-    <script src="js/jquery.prettyPhoto_compress.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $("a.video_es").prettyPhoto({autoplay: false, theme: 'light_rounded'});
-        });
-    </script>
+
+
     <!-- prettyPhoto: fin-->
   </head>
 
@@ -230,9 +225,10 @@ THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
           
     </div>
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="js/jquery.prettyPhoto.js"></script>
   <script src="js/jquery.qtip-1.0.0-rc3.min.js"></script>  
-	<script src="js/bootstrap.min.js"></script>  
+  <script src="js/bootstrap.min.js"></script>  
   <script src="js/app.js?nocahe=1"></script>  
 
   </body>

@@ -83,6 +83,9 @@
 
 	$(window).on('click scroll', holdLoop);
 
+	$(".video_es").attr('rel','prettyPhoto[videos]').prettyPhoto({autoplay: true, default_width: 800, default_height: 540, social_tools: false});
+    
+
 	// Nubes de dialogo del comic
 
 	var waitForHold = false;

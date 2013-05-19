@@ -1076,7 +1076,7 @@ body .row{
 	right: 0;
 	height: 27px;
 	width: 205px;
-	z-index: 9999;
+	z-index: 1000;
 	color: white;
 	opacity: 0;
 }
@@ -1309,3 +1309,20 @@ a[role="button"]:focus
     outline: 0px solid white;    
 }​
 
+
+div.light_rounded .pp_close{
+	top: 0;
+	left: 0;
+}
+
+div.pp_default .pp_nav .pp_play, div.pp_default .pp_nav .pp_pause {
+	display: none;
+}
+
+.pp_nav {
+	margin: 3px 10px 2px 5px !important;
+}
+
+div.pp_default .pp_nav .currentTextHolder {
+	left: 40px !important;
+}
