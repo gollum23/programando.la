@@ -3,7 +3,7 @@
 // Este archivo es el que se usa para generar la pagina principal
 // que se le muestra a todos los usuarios.
 // De esta forma mostrar la pagina es algo mas ligero y rapido para el servidor.
-require("functions.php");
+require("../includes/functions.php");
 onlyLocalAllowed();
 define("FILE_NAME", '10-formas-mejores-de-aprender-javascript-gratis.html');
 ob_start("toStatic"); 
