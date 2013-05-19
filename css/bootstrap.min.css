@@ -1290,14 +1290,6 @@ form input.large-input {
 	font-size: 13px;
 }
 
-
-
-
-.show-errors .error-form {
-	border: 1px solid red;
-}
-
-
 input[type="text"]:focus,
 input[type="number"]:focus,
 input[type="email"]:focus,
@@ -1309,6 +1301,11 @@ a[role="button"]:focus
     outline: 0px solid white;    
 }​
 
+.show-errors .error-form {
+	border: 1px solid red;
+}
+
+/* changes for pretyPhoto */
 
 div.light_rounded .pp_close{
 	top: 0;
@@ -1326,3 +1323,6 @@ div.pp_default .pp_nav .pp_play, div.pp_default .pp_nav .pp_pause {
 div.pp_default .pp_nav .currentTextHolder {
 	left: 40px !important;
 }
+
+/* end changes for pretyPhoto */
+
