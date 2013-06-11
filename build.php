@@ -23,7 +23,6 @@ ob_start("toStatic");
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />    
     <link href="css/bootstrap-responsive.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen"/>
-
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -165,7 +164,7 @@ ob_start("toStatic");
       <hr>
 
       <footer>
-        <p>Creado por <a class="author" href="http://twitter.com/ivanca">Ivan Castellanos</a><br>El logo animado en este sitio web es una parodia de mejorando.la<br>
+        <p>Creado por <a class="author" href="contribuidores.html">numerosos colaboradores</a><br>El logo animado en este sitio web es una parodia de mejorando.la<br>
           <span title="Copyright (c) 2012 Ivan Castellanos.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
