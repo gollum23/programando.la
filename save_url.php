@@ -5,11 +5,20 @@
 #######################
 
 require "includes/functions.php";
+$url = local() ? '_index.php' : 'index.html';
+
+#######################
+# Browser back button #
+#######################
+
+if (empty($_POST)) {
+	header('Location: ' . $url);
+	exit();
+}
 
 ##############
 # Validation #
 ##############
-
 
 if (empty($_POST["name"]) || empty($_POST["link"])) {
 	exit( "name y link no pueden estar vacios." );
@@ -24,7 +33,7 @@ $ip = $_SERVER['REMOTE_ADDR'];
 $test = $name . $link . $twitter . $lang;
 if (preg_match('/<script|\'\s*;\s*(INSERT|UPDATE|DELETE|DROP)\b/', $test) !== 0) {
 	banUser($dbh);
-};
+}
 
 if (filter_var($link, FILTER_VALIDATE_URL) === FALSE) {
     exit('Link invalido.');
@@ -69,10 +78,8 @@ $stmt->bindParam(':name', $name, PDO::PARAM_STR);
 $stmt->bindParam(':lang', $lang, PDO::PARAM_STR);
 $stmt->execute();
 $first_name = 'David';
-$message = '<strong>Muchas gracias!</strong> Su link ha sido grabado y luego de ser aceptado sera añadido a la pagina.';
-$url = local() ? '_index.php' : 'index.html';
 mysql_query("SET NAMES UTF8");
-setcookie('message', $message); // 12 hours
-header('Location: ' . $url . '?saved=true');
 
-
+// If everything went fine
+singleMessageAndReturn('Muchas gracias! Su link ha sido grabado y luego de ser aceptado sera añadido a la pagina.');
+?>

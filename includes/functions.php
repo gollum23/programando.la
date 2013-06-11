@@ -11,7 +11,7 @@ function toStatic($buffer){
   );
   $buffer = str_replace($a, $b, $buffer);
   file_put_contents(FILE_NAME, $buffer);
-  return $buffer;  
+  return ''; 
 }
 
 function printData($file, $wiki, $pagOficial=''){
@@ -77,7 +77,7 @@ function banUser($dbh){
 
 
 function local(){
-  return strpos($_SERVER['SERVER_NAME'], 'programando.la') === FALSE;
+  return $_SERVER['SERVER_NAME'] !== 'programando.la' && $_SERVER['SERVER_NAME'] !== 'www.programando.la';
 }
 
 function saveSchema() {
@@ -106,4 +106,62 @@ function onlyLocalAllowed(){
       . ' un contexto local, no directamente en produccion.'
     );
   }
+}
+
+function singleMessageAndReturn($msg) {
+
+  ?>
+  <!DOCTYPE HTML>
+  <html>
+  <head>
+  <meta charset="utf-8">
+  <title><?= $msg ?></title>
+  <style type="text/css">
+  @import url(//fonts.googleapis.com/css?family=Crete+Round);
+  h1, p {
+    font-family: 'Crete Round',serif;
+    line-height: 40px;
+    text-rendering: optimizelegibility;
+    top: 100px;
+    text-align: center;
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+
+  h1 {
+    font-size: 30px;
+    font-weight: 400;
+    margin-top: 160px;
+  }
+
+  a, h1 {
+    color:  rgb(175, 190, 0);
+  }
+
+  p {
+    margin-top: 10px;
+    font-size: 20px;
+    color: #666;
+  }
+  </style>
+  </head>
+  <body>
+    <h1 id="msg"><?= $msg ?></h1>
+    <p>Sera devuelto al <a href="index.html">sitio</a> en <span id="time">12</span> segundos</p>
+  </body>
+
+  <script type="text/javascript">
+  var time = document.getElementById('time');
+  var msg = document.getElementById('msg').innerHTML;
+  var ani = setInterval(function () {
+    time.innerHTML -= 1;
+    if (time.innerHTML === "0") {
+      document.location = 'index.html';
+      clearInterval(ani);
+    }
+  }, 1000);
+  </script>
+
+  </html>
+  <?php
 }
